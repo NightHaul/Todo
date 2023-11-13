@@ -45,17 +45,7 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-        "post-install-cmd": [  
-            "php artisan clear-compiled",  
-            "php artisan optimize",  
-            "chmod -R 777 public/",
-            "chmod -R 777 storage"
-        ],
-        "compile": [
-            "@php -r \"file_exists('.env') || copy('.env.heroku', '.env');\"",
-            "@php artisan key:generate"
-        ] 
+        ]
     },
     "extra": {
         "laravel": {
@@ -65,10 +55,14 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "bin-dir": "vender/bin"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "compile": [
+        "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ] 
 
     
 }
