@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
+        // asset()でURLを呼び出している個所でHTTPSでアクセスするようにする
+        if (config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
     }
 }
