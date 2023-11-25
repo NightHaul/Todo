@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +10,9 @@
 
     <!-- @vite('resources/css/app.css') -->
 </head>
- 
+
 <body>
- 
+
 @if ($todo_lists->isNotEmpty())
         <div class="container px-5 mx-auto">
             <ul class="font-medium text-gray-900 bg-white rounded-lg border border-gray-200">
@@ -25,7 +25,7 @@
         </div>
     @endif
 
- 
+
 </body>
- 
+
 </html>
